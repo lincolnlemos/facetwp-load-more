@@ -15,7 +15,7 @@
     });
 
     $(document).on('click', '.fwp-load-more', function() {
-        $('.fwp-load-more').html(FWP_JSON.load_more.loading_text);
+        $('.fwp-load-more').html($(e.target).data('loading'));
 
         FWP.is_load_more = true; // set the flag
         FWP.load_more_paged += 1; // next page
