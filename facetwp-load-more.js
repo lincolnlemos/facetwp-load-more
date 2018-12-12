@@ -4,7 +4,7 @@
             return;
         }
 
-        wp.hooks.addFilter('facetwp/template_html', function(resp, params) {
+        FWP.hooks.addFilter('facetwp/template_html', function(resp, params) {
             if (FWP.is_load_more) {
                 FWP.is_load_more = false;
                 $('.facetwp-template').append(params.html);
@@ -22,6 +22,7 @@
         FWP.facets['load_more'] = [FWP.load_more_paged]; // trick into adding URL var
         FWP.paged = FWP.load_more_paged; // grab the next page of results
         FWP.soft_refresh = true; // don't process facets
+        FWP.is_reset = true; // don't parse facets
         FWP.refresh();
     });
 
